@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog de Ciberseguridad Básica</title>
+    <!-- Enlace a la hoja de estilos en la misma carpeta raíz -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Cabecera principal del blog -->
+    <header class="cabecera">
+        <div class="contenedor">
+            <h1>Cuaderno de Ciberseguridad</h1>
+            <p class="subtitulo">Apuntes sencillos sobre seguridad en la red para el día a día</p>
+        </div>
+    </header>
+
+    <!-- Barra de navegación superior -->
+    <nav class="barra-navegacion">
+        <div class="contenedor nav-contenido">
+            <ul class="menu-enlaces">
+                <li><a href="#" id="link-inicio" class="enlace-nav activo">Inicio (Blog)</a></li>
+                <li><a href="#" id="link-sobre-mi" class="enlace-nav">Sobre mí</a></li>
+                <li><a href="#" id="link-contacto" class="enlace-nav">Contacto</a></li>
+            </ul>
+            <!-- Botón para activar o desactivar el modo oscuro -->
+            <button id="btn-modo-oscuro" class="btn-modo" type="button">Modo Oscuro</button>
+        </div>
+    </nav>
+
+    <!-- Contenido principal de la página -->
+    <main class="contenedor contenido-principal">
+
+        <!-- SECCIÓN 1: INICIO (BLOG) -->
+        <section id="seccion-inicio" class="seccion-vista">
+            <h2>Últimas entradas del blog</h2>
+
+            <!-- Barra de herramientas: buscador y filtro por categorías -->
+            <div class="controles-blog">
+                <div class="caja-buscador">
+                    <label for="buscador">Buscar artículo:</label>
+                    <input type="text" id="buscador" placeholder="Escribe una palabra del título...">
+                </div>
+
+                <div class="filtros-categoria">
+                    <span>Categorías:</span>
+                    <button type="button" class="btn-filtro filtro-activo" data-categoria="todos">Todos</button>
+                    <button type="button" class="btn-filtro" data-categoria="privacidad">Privacidad</button>
+                    <button type="button" class="btn-filtro" data-categoria="redes">Redes</button>
+                </div>
+            </div>
+
+            <!-- Contenedor Flexbox para las tarjetas de los artículos -->
+            <div id="lista-articulos" class="rejilla-articulos">
+
+                <!-- Artículo 1 -->
+                <article class="tarjeta-articulo" data-categoria="privacidad">
+                    <img src="https://picsum.photos/600/300?random=1" alt="Teclado de ordenador y seguridad digital">
+                    <div class="cuerpo-articulo">
+                        <span class="etiqueta-categoria">Privacidad</span>
+                        <h3 class="titulo-articulo">Cómo crear contraseñas seguras y no olvidarlas</h3>
+                        <p class="fecha-articulo">Publicado el 10 de noviembre de 2026</p>
+                        <p class="resumen">
+                            Usar la misma clave en todas tus cuentas es uno de los mayores riesgos en internet. Aprende por qué la longitud importa más que los símbolos raros.
+                        </p>
+                        <!-- Texto completo inicialmente oculto -->
+                        <div class="texto-completo oculto">
+                            <p>
+                                Muchas veces pensamos que una contraseña segura debe ser imposible de recordar, pero la clave real está en la longitud. Una frase de paso de 14 o 16 caracteres formada por cuatro palabras aleatorias es mucho más difícil de descifrar por fuerza bruta que una palabra corta con números.
+                            </p>
+                            <p>
+                                Además, utilizar un gestor de contraseñas fiable te permite tener una clave distinta y robusta para cada servicio sin tener que memorizarlas todas. Por último, activa siempre la verificación en dos pasos (2FA) en tu correo principal y redes sociales.
+                            </p>
+                        </div>
+                        <button type="button" class="btn-leer-mas">Leer más</button>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="tarjeta-articulo" data-categoria="redes">
+                    <img src="https://picsum.photos/600/300?random=2" alt="Conexión a internet en portátil">
+                    <div class="cuerpo-articulo">
+                        <span class="etiqueta-categoria">Redes</span>
+                        <h3 class="titulo-articulo">¿Es seguro conectarse al Wi-Fi público de una cafetería?</h3>
+                        <p class="fecha-articulo">Publicado el 17 de noviembre de 2026</p>
+                        <p class="resumen">
+                            Las redes abiertas de aeropuertos, hoteles y bares son muy cómodas, pero también esconden peligros si no tomamos unas precauciones básicas.
+                        </p>
+                        <!-- Texto completo inicialmente oculto -->
+                        <div class="texto-completo oculto">
+                            <p>
+                                Cuando te conectas a una red Wi-Fi abierta sin contraseña, otros usuarios conectados al mismo punto de acceso podrían interceptar el tráfico que no vaya cifrado. También existen redes falsas con nombres muy parecidos al del local para engañar a los clientes.
+                            </p>
+                            <p>
+                                Si necesitas usar una red pública, comprueba siempre que las páginas web que visitas usen el protocolo HTTPS (el icono del candado), evita entrar en tu banco online y desactiva la opción de conexión automática en tu móvil o portátil.
+                            </p>
+                        </div>
+                        <button type="button" class="btn-leer-mas">Leer más</button>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="tarjeta-articulo" data-categoria="privacidad">
+                    <img src="https://picsum.photos/600/300?random=3" alt="Pantalla de código y análisis de enlaces">
+                    <div class="cuerpo-articulo">
+                        <span class="etiqueta-categoria">Privacidad</span>
+                        <h3 class="titulo-articulo">Claves para detectar un correo de phishing a tiempo</h3>
+                        <p class="fecha-articulo">Publicado el 22 de noviembre de 2026</p>
+                        <p class="resumen">
+                            Los mensajes falsos que suplantan a bancos o empresas de paquetería son cada vez más creíbles. Repasamos las señales de alarma más comunes.
+                        </p>
+                        <!-- Texto completo inicialmente oculto -->
+                        <div class="texto-completo oculto">
+                            <p>
+                                El phishing busca provocar urgencia o miedo para que hagas clic sin pensar: por ejemplo, avisando de que tu cuenta será bloqueada en 24 horas o de que tienes un paquete retenido. Esa prisa artificial es la primera pista de que algo no va bien.
+                            </p>
+                            <p>
+                                Antes de pulsar ningún enlace, revisa la dirección real del remitente (no solo el nombre visible) y pasa el ratón por encima del botón para ver a qué dominio apunta realmente. En caso de duda, cierra el correo y entra manualmente escribiendo la dirección oficial en el navegador.
+                            </p>
+                        </div>
+                        <button type="button" class="btn-leer-mas">Leer más</button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Mensaje cuando el buscador no encuentra coincidencias -->
+            <p id="sin-resultados" class="mensaje-vacio oculto">
+                No se han encontrado artículos que coincidan con tu búsqueda.
+            </p>
+        </section>
+
+        <!-- SECCIÓN 2: SOBRE MÍ -->
+        <section id="seccion-sobre-mi" class="seccion-vista oculto">
+            <div class="tarjeta-info">
+                <h2>Sobre mí</h2>
+                <p>
+                    ¡Hola! he creado este blog como parte de la práctica de la asignatura <strong>Desarrollo de Aplicaciones en Red</strong>.
+                </p>
+                <p>
+                    Me interesa especialmente el funcionamiento de ..... sshhhh tranqui no <strong>AI SLOP</strong>
+                </p>
+                <!-- MEMES -->
+                  <h3>Memes</h3>
+                <div class="memes">
+                    <img src="assets/csbelike.jpg" alt="Being a CS student in 2026">
+                    <img src="assets/iamaprogammer.jpg" alt="I am a programmer">
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: CONTACTO -->
+        <section id="seccion-contacto" class="seccion-vista oculto">
+            <div class="tarjeta-info">
+                <h2>Contacto</h2>
+                <p>¿Tienes alguna duda sobre los artículos o quieres proponer un nuevo tema? Rellena el siguiente formulario:</p>
+
+                <form id="formulario-contacto" class="formulario">
+                    <div class="campo-formulario">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" placeholder="tu@correo.com">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" rows="5" placeholder="Escribe aquí tu consulta..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                </form>
+
+                <!-- Aquí se mostrará el mensaje de éxito o error -->
+                <p id="estado-formulario" class="mensaje-estado oculto"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <p>Práctica 1 - Desarrollo de Aplicaciones en Red | 2026</p>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
